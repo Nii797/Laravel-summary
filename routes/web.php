@@ -34,3 +34,12 @@ Route::get('/biodatamahasiswa', function () {
         ]
     );
 });
+
+Route::get('/admintwd', function () {
+    return view('TamplateAdmin',
+        [   'Dashboard' => 'Ini Dashboard',
+            'Datakomik' => 'ini Komik',
+            'LinkFilm' => 'Ini Film'
+        ]
+    );
+});
