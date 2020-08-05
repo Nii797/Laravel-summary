@@ -25,6 +25,10 @@ Route::get('Identitas', function () {
     return ("Nama saya soni");  
 });
 
+Route::get('/tes', function () {
+    return view('tes', ['Kontent'=>"Ini adalah Tes"]);
+});
+
 Route::get('/biodatamahasiswa', function () {
     return view('tes', 
         [   'nama'=>"Gundul",
@@ -53,3 +57,7 @@ Route::get('/tatausaha', function () {
         ]
     );  
 });
+
+// Controller
+
+Route::get('mahasiswa', 'MahasiswaController@index');
