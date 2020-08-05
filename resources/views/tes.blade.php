@@ -7,5 +7,7 @@
     ALamat : {{$alamat}} <br>
     Jurusan : {{$jurusan}} <br>
 
+    Buka link admin : <a href="{{ url('/admintwd') }}">Admin</a> 
+
 </body>
 </html>

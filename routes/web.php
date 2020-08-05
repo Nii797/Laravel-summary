@@ -38,8 +38,18 @@ Route::get('/biodatamahasiswa', function () {
 Route::get('/admintwd', function () {
     return view('TamplateAdmin',
         [   'Dashboard' => 'Ini Dashboard',
-            'Datakomik' => 'ini Komik',
-            'LinkFilm' => 'Ini Film'
+            'DataMahasiswa' => 'ini data mahasiswa',
+            'DataDosen' => 'Ini data dosen'
         ]
     );
+});
+
+Route::get('/tatausaha', function () {
+    return view('TU', 
+        [
+            'namatu' => "Herman",
+            'bagian' => "Administrasi",
+            'jabatan' => "Ketua Staff TU"
+        ]
+    );  
 });
