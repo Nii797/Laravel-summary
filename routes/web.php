@@ -25,27 +25,40 @@ Route::get('Identitas', function () {
     return ("Nama saya soni");  
 });
 
-Route::get('/biodatamahasiswa', function () {
-    return view('tes', 
-        [   'nama'=>"Gundul",
-            'kelas'=>"A3",
-            'alamat'=>"Bandung",
-            'jurusan'=>"jurusan"
+Route::get('/admin', function () {
+    return view('TamplateAdmin',
+        [   'Dashboard' => 'Ini Dashboard',
+            'DataMahasiswa' => 'ini data mahasiswa',
+            'DataDosen' => 'Ini data dosen',
+            'DataTU' => 'Ini data TU'
         ]
     );
 });
 
-Route::get('/admintwd', function () {
-    return view('TamplateAdmin',
-        [   'Dashboard' => 'Ini Dashboard',
-            'DataMahasiswa' => 'ini data mahasiswa',
-            'DataDosen' => 'Ini data dosen'
+Route::get('/Dosen', function () {
+    return view('TamplateDosen',
+        [
+            'nama'=>"Pak jack",
+            'matkul'=>"Algoritma dan pemograman",
+            'alamat'=>"Bandung Raya",
+            'jurusan'=>"Teknik Informatika"
+        ]
+    );
+});
+
+Route::get('/Mahasiswa', function () {
+    return view('TamplateMahasiswa',
+        [
+            'nama'=>"Soni Hidayatulloh",
+            'kelas'=>"A3",
+            'alamat'=>"Bandung Timur, Majalaya",
+            'jurusan'=>"Teknik informatika"
         ]
     );
 });
 
 Route::get('/tatausaha', function () {
-    return view('TU', 
+    return view('TamplateTU', 
         [
             'namatu' => "Herman",
             'bagian' => "Administrasi",
