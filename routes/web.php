@@ -30,7 +30,8 @@ Route::get('/admin', function () {
         [   'Dashboard' => 'Ini Dashboard',
             'DataMahasiswa' => 'ini data mahasiswa',
             'DataDosen' => 'Ini data dosen',
-            'DataTU' => 'Ini data TU'
+            'DataTU' => 'Ini data TU',
+            'DataOB' => 'Ini data OB'
         ]
     );
 });
@@ -38,10 +39,10 @@ Route::get('/admin', function () {
 Route::get('/Dosen', function () {
     return view('TamplateDosen',
         [
-            'nama'=>"Pak jack",
-            'matkul'=>"Algoritma dan pemograman",
-            'alamat'=>"Bandung Raya",
-            'jurusan'=>"Teknik Informatika"
+            'nama' => "Pak jack",
+            'matkul' => "Algoritma dan pemograman",
+            'alamat' => "Bandung Raya",
+            'jurusan' => "Teknik Informatika"
         ]
     );
 });
@@ -49,15 +50,15 @@ Route::get('/Dosen', function () {
 Route::get('/Mahasiswa', function () {
     return view('TamplateMahasiswa',
         [
-            'nama'=>"Soni Hidayatulloh",
-            'kelas'=>"A3",
-            'alamat'=>"Bandung Timur, Majalaya",
-            'jurusan'=>"Teknik informatika"
+            'nama' => "Soni Hidayatulloh",
+            'kelas' => "A3",
+            'alamat' => "Bandung Timur, Majalaya",
+            'jurusan' => "Teknik informatika"
         ]
     );
 });
 
-Route::get('/tatausaha', function () {
+Route::get('/Tatausaha', function () {
     return view('TamplateTU', 
         [
             'namatu' => "Herman",
@@ -66,3 +67,16 @@ Route::get('/tatausaha', function () {
         ]
     );  
 });
+
+Route::get('/OB', function () {
+    return view('TamplateOB',
+        [
+            'id' => "3434324",
+            'nama' => "Solihin",
+            'alamat' => 'Bandung Raya'
+        ]
+    );
+});
+
+
+
