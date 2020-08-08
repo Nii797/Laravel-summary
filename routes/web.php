@@ -25,16 +25,18 @@ Route::get('Identitas', function () {
     return ("Nama saya soni");  
 });
 
-Route::get('/admin', function () {
-    return view('TamplateAdmin',
-        [   'Dashboard' => 'Ini Dashboard',
-            'DataMahasiswa' => 'ini data mahasiswa',
-            'DataDosen' => 'Ini data dosen',
-            'DataTU' => 'Ini data TU',
-            'DataOB' => 'Ini data OB'
-        ]
-    );
-});
+Route::get('/admin', 'ControllerAdmin@index');
+
+// Route::get('/admin', function () {
+//     return view('TamplateAdmin',
+//         [   'Dashboard' => 'Ini Dashboard',
+//             'DataMahasiswa' => 'ini data mahasiswa',
+//             'DataDosen' => 'Ini data dosen',
+//             'DataTU' => 'Ini data TU',
+//             'DataOB' => 'Ini data OB'
+//         ]
+//     );
+// });
 
 Route::get('/Dosen', function () {
     return view('TamplateDosen',
