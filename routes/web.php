@@ -25,8 +25,6 @@ Route::get('Identitas', function () {
     return ("Nama saya soni");  
 });
 
-Route::get('/admin', 'ControllerAdmin@index');
-
 // Route::get('/admin', function () {
 //     return view('TamplateAdmin',
 //         [   'Dashboard' => 'Ini Dashboard',
@@ -38,47 +36,16 @@ Route::get('/admin', 'ControllerAdmin@index');
 //     );
 // });
 
-Route::get('/Dosen', function () {
-    return view('TamplateDosen',
-        [
-            'nama' => "Pak jack",
-            'matkul' => "Algoritma dan pemograman",
-            'alamat' => "Bandung Raya",
-            'jurusan' => "Teknik Informatika"
-        ]
-    );
-});
+// Catch data url (menangkap data url)
+Route::get('/tes/{tesnamaurl}', 'ControllerAdmin@tesnamaurl');
 
-Route::get('/Mahasiswa', function () {
-    return view('TamplateMahasiswa',
-        [
-            'nama' => "Soni Hidayatulloh",
-            'kelas' => "A3",
-            'alamat' => "Bandung Timur, Majalaya",
-            'jurusan' => "Teknik informatika"
-        ]
-    );
-});
+Route::get('/admin', 'ControllerAdmin@index');
 
-Route::get('/Tatausaha', function () {
-    return view('TamplateTU', 
-        [
-            'namatu' => "Herman",
-            'bagian' => "Administrasi",
-            'jabatan' => "Ketua Staff TU"
-        ]
-    );  
-});
+Route::get('/dosen', 'ControllerAdmin@indexdosen');
+Route::post('/dosen/prosesdosen', 'ControllerAdmin@inputdosen');
 
-Route::get('/OB', function () {
-    return view('TamplateOB',
-        [
-            'id' => "3434324",
-            'nama' => "Solihin",
-            'alamat' => 'Bandung Raya'
-        ]
-    );
-});
+Route::get('/mahasiswa', 'ControllerAdmin@indexmahasiswa');
 
+Route::get('/tatausaha', 'ControllerAdmin@indexTU');
 
-
+Route::get('officeboy', 'ControllerAdmin@indexOB');

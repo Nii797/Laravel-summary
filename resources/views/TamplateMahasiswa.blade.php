@@ -5,9 +5,9 @@
     Nama : {{$nama}} <br>
     Kelas : {{$kelas}} <br>
     ALamat : {{$alamat}} <br>
-    Jurusan : {{$jurusan}} <br>
+    Jurusan : {{$jurusan}} <br><br>
 
-    Buka link admin : <a href="{{ url('/admintwd') }}">Admin</a> 
+    Kembali ke<a href="{{ url('/admin') }}">Admin</a>
 
 </body>
 </html>

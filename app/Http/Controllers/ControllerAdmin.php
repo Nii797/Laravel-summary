@@ -6,79 +6,69 @@ use Illuminate\Http\Request;
 
 class ControllerAdmin extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('TamplateAdmin');
+    public function tesnamaurl($tesnamaurl){
+        return $tesnamaurl;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index(){
+        return view('TamplateAdmin',
+// data passing
+            [ 
+                'Dashboard' => 'Ini Dashboard',
+                'DataMahasiswa' => 'ini data mahasiswa',
+                'DataDosen' => 'Ini data dosen',
+                'DataTU' => 'Ini data TU',
+                'DataOB' => 'Ini data OB'
+            ]
+        );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+
+    public function indexdosen() {
+        return view('TamplateDosen',
+            [
+                'nama' => "Yiyi Supendi",
+                'matkul' => "Jaringan Komputer",
+                'alamat' => "Cileunyi",
+                'jurusan' => "Informatika"
+            ]
+        );
+    }    
+
+    public function prosesdosen(Request $request){
+        $nama = $request->input('nama');
+        $alamat = $request->input('alamat');
+        return $nama; 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function indexmahasiswa() {
+        return view('TamplateMahasiswa',
+            [
+                'nama' => "Soni Hidayatulloh",
+                'kelas' => "A3",
+                'alamat' => "Bandung Timur Majalaya city",
+                'jurusan' => "Teknik Informatika"
+            ]
+        );
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function indexTU() {
+        return view('TamplateTU',
+            [
+                'namatu' => "Herman",
+                'bagian' => "Tata usaha administrasi",
+                'jabatan' => "Ketua Tata usaha"
+            ]
+        );
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function indexOB() {
+        return view('TamplateOB', 
+            [
+                'id' => "43243",
+                'nama' => "Solihin Wayudin",
+                'alamat' => "Bandung Raya"
+            ]
+        );
     }
 }
