@@ -41,11 +41,21 @@ Route::get('/tes/{tesnamaurl}', 'ControllerAdmin@tesnamaurl');
 
 Route::get('/admin', 'ControllerAdmin@index');
 
+// menangkap data dari url parameter nama dari fungsi iniindex 
+Route::get('/admintangkap/{nama}', 'ControllerAdmin@iniindex');
+
+Route::get('/dekan', 'ControllerAdmin@indexdekan');
+Route::post('/dekan', 'ControllerAdmin@prosesinputdekan');
+
 Route::get('/dosen', 'ControllerAdmin@indexdosen');
-Route::post('/dosen/prosesdosen', 'ControllerAdmin@inputdosen');
+Route::post('/dosen/prosesinputdosen', 'ControllerAdmin@prosesinputdosen');
 
 Route::get('/mahasiswa', 'ControllerAdmin@indexmahasiswa');
+Route::post('/mahasiswa/prosesinputmhs', 'ControllerAdmin@prosesinputmhs');
 
 Route::get('/tatausaha', 'ControllerAdmin@indexTU');
+Route::post('/tatausaha/proses', 'ControllerAdmin@prosesinputTU');
 
-Route::get('officeboy', 'ControllerAdmin@indexOB');
+Route::get('/officeboy', 'ControllerAdmin@indexOB');
+Route::post('/officeboy', 'ControllerAdmin@prosesinputOB');
+

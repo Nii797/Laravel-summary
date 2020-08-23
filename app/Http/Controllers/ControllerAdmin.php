@@ -10,9 +10,15 @@ class ControllerAdmin extends Controller
         return $tesnamaurl;
     }
 
+    // fungsi parameter untuk mengankap data dari url
+    public function iniindex($nama)
+    {
+        return $nama;
+    }
+
     public function index(){
         return view('TamplateAdmin',
-// data passing
+    // data passing
             [ 
                 'Dashboard' => 'Ini Dashboard',
                 'DataMahasiswa' => 'ini data mahasiswa',
@@ -22,7 +28,6 @@ class ControllerAdmin extends Controller
             ]
         );
     }
-
 
     public function indexdosen() {
         return view('TamplateDosen',
@@ -35,10 +40,31 @@ class ControllerAdmin extends Controller
         );
     }    
 
-    public function prosesdosen(Request $request){
+    public function indexdekan(){
+        return view('TamplateDekan');
+    }
+
+    public function prosesinputdekan(Request $request){
+        $nama = $request->input('nama');
+        $jabatan = $request->input('jabatan');
+        $dekanjurusan = $request->input('dekanjurusan');
+        $alamat = $request->input('alamat');
+
+        return view('TamplateDekan', 
+            [
+                'Nama' => $nama,
+                'jabatan' => $jabatan,
+                'dekanjurusan' => $dekanjurusan,
+                'slamat' => $alamat
+            ]
+        );
+    }
+
+    public function prosesinputdosen(Request $request){
         $nama = $request->input('nama');
         $alamat = $request->input('alamat');
-        return $nama; 
+        
+        return "Nama : ".$nama.", Alamat : ".$alamat; 
     }
 
     public function indexmahasiswa() {
@@ -52,7 +78,16 @@ class ControllerAdmin extends Controller
         );
     }
 
-    public function indexTU() {
+    public function prosesinputmhs(Request $request){
+        $nama    = $request->input('nama');
+        $kelas   = $request->input('kelas');
+        $alamat  = $request->input('alamat');
+        $jurusan = $request->input('jurusan');
+
+        return "Nama : ".$nama.", Kelas : ".$kelas." Alamat : ".$alamat.", Jurusan : ".$jurusan;
+    }
+
+    public function indexTU(){
         return view('TamplateTU',
             [
                 'namatu' => "Herman",
@@ -62,7 +97,8 @@ class ControllerAdmin extends Controller
         );
     }
 
-    public function indexOB() {
+
+    public function indexOB(){
         return view('TamplateOB', 
             [
                 'id' => "43243",
@@ -70,5 +106,13 @@ class ControllerAdmin extends Controller
                 'alamat' => "Bandung Raya"
             ]
         );
+    }
+
+    public function prosesinputOB(Request $request){
+        $id     = $request->input('id');
+        $nama   = $request->input('nama');
+        $alamat = $request->input('alamat');
+        
+        return "Nama : ".$nama."<br> Alamat : ".$alamat;
     }
 }
