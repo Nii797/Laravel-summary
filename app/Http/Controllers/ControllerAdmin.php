@@ -44,6 +44,7 @@ class ControllerAdmin extends Controller
         return view('TamplateDekan');
     }
 
+    // masih percobaan dan belum bisa untuk menampilkan data di satu halaman dekan
     public function prosesinputdekan(Request $request){
         $nama = $request->input('nama');
         $jabatan = $request->input('jabatan');
