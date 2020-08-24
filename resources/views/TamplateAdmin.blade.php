@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Sistem Kampus Laravel</title>
+</head>
 <body>
 
-    <h1>Selamat Admin</h1>
-    <a href="{{ url('/admin') }}">|Admin|</a>
-    <a href="{{ url('/dekan') }}">|Dekan|</a>
-    <a href="{{ url('/dosen') }}">|Dosen|</a>
-    <a href="{{ url('/mahasiswa') }}">|Mahasiswa|</a>
-    <a href="{{ url('/tatausaha') }}">|Tata Usaha|</a>
-    <a href="{{ url('/officeboy') }}">|Office Boy|</a> <br><br>
+    <header>
+        <h1>SELAMAT DATANG ADMIN</h1>
+        <nav>
+            <a href="{{ url('/admin') }}">|Beranda|</a>
+            <a href="{{ url('/dekan') }}">|Dekan|</a>
+            <a href="{{ url('/dosen') }}">|Dosen|</a>
+            <a href="{{ url('/mahasiswa') }}">|Mahasiswa|</a>
+            <a href="{{ url('/tatausaha') }}">|Tata Usaha|</a>
+            <a href="{{ url('/officeboy') }}">|Office Boy|</a> <br><br>
+        </nav>
+    </header>
 
-    {{ $Dashboard }} <br>
-    {{ $DataMahasiswa }} <br>
-    {{ $DataDosen }} <br>
-    {{ $DataTU }} <br>
-    {{ $DataOB }} <br>
+    <!-- Bagian isi judul halaman -->
+    <h3> @yield('judul_halaman') </h3>
+
+    <!-- Bagian kontent isi kontent -->
+    <h3> @yield('kontent') </h3>
+
+    <!-- Bagian kontent footer -->
+    <footer>
+        <p>&copy; Phanterason_Parduz Kembali ke <a href="{{url('/admin')}}">Dasboard</a></p>
+    </footer>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <h1>Selamat datang Office Boy</h1>
+@extends('TamplateAdmin')
+
+@section('kontent')
+    <h1>DATA OFFICE BOY</h1>
     ID      : {{ $id }} <br>
     Nama    : {{ $nama }} <br>
     Alamat  ; {{ $alamat }} <br><br>
@@ -13,7 +13,4 @@
         Alamat  : <input type="text" name="alamat"><br>
         <input type="submit" value="Masuk">
     </form>
-
-    Kembali ke<a href="{{ url('/admin') }}">Admin</a>
-</body>
-</html>
+@endsection

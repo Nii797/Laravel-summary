@@ -16,17 +16,22 @@ class ControllerAdmin extends Controller
         return $nama;
     }
 
-    public function index(){
-        return view('TamplateAdmin',
-    // data passing
-            [ 
-                'Dashboard' => 'Ini Dashboard',
-                'DataMahasiswa' => 'ini data mahasiswa',
-                'DataDosen' => 'Ini data dosen',
-                'DataTU' => 'Ini data TU',
-                'DataOB' => 'Ini data OB'
-            ]
-        );
+    // public function index(){
+    //     return view('TamplateAdmin',
+    // // data passing
+    //         [ 
+    //             'Dashboard' => 'Ini Dashboard',
+    //             'DataMahasiswa' => 'ini data mahasiswa',
+    //             'DataDosen' => 'Ini data dosen',
+    //             'DataTU' => 'Ini data TU',
+    //             'DataOB' => 'Ini data OB'
+    //         ]
+    //     );
+    // }
+
+    public function indexberandaadmin()
+    {
+        return view('TamplateAdminBeranda');
     }
 
     public function indexdosen() {
@@ -44,7 +49,7 @@ class ControllerAdmin extends Controller
         return view('TamplateDekan');
     }
 
-    // masih percobaan dan belum bisa untuk menampilkan data di satu halaman dekan
+    // masiih jadi PR        
     public function prosesinputdekan(Request $request){
         $nama = $request->input('nama');
         $jabatan = $request->input('jabatan');

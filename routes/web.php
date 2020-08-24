@@ -39,10 +39,12 @@ Route::get('Identitas', function () {
 // Catch data url (menangkap data url)
 Route::get('/tes/{tesnamaurl}', 'ControllerAdmin@tesnamaurl');
 
-Route::get('/admin', 'ControllerAdmin@index');
-
 // menangkap data dari url parameter nama dari fungsi iniindex 
 Route::get('/admintangkap/{nama}', 'ControllerAdmin@iniindex');
+
+// Route::get('/admin', 'ControllerAdmin@indexadmin');
+
+Route::get('/admin', 'ControllerAdmin@indexberandaadmin');
 
 Route::get('/dekan', 'ControllerAdmin@indexdekan');
 Route::post('/dekan', 'ControllerAdmin@prosesinputdekan');
