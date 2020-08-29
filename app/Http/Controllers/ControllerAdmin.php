@@ -54,6 +54,7 @@ class ControllerAdmin extends Controller
         $nama = $request->input('nama');
         $jabatan = $request->input('jabatan');
         $dekanjurusan = $request->input('dekanjurusan');
+        $umur = $request->input('umur');
         $alamat = $request->input('alamat');
 
         return view('TamplateDekan')->with("Nama : ".$nama.", Alamat : ".$alamat);
