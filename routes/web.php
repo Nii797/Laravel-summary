@@ -44,6 +44,14 @@ Route::get('/admintwd', function () {
     );
 });
 
+Route::get('/mahasiswa', function () {
+    return view('TamplateMahasiswa',
+        [
+            'nama'=>'Soni'
+        ]
+    );
+});
+
 Route::get('/tatausaha', function () {
     return view('TU', 
         [
