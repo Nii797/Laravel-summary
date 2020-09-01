@@ -48,6 +48,7 @@ Route::get('/admin', 'ControllerAdmin@indexberandaadmin');
 
 Route::get('/dekan', 'ControllerAdmin@indexdekan');
 Route::post('/dekan', 'ControllerAdmin@prosesinputdekan');
+Route::get('/dekan/tambah', 'ControllerAdmin@indexdekan');
 
 Route::get('/dosen', 'ControllerAdmin@indexdosen');
 Route::post('/dosen/prosesinputdosen', 'ControllerAdmin@prosesinputdosen');
@@ -57,6 +58,8 @@ Route::post('/mahasiswa/prosesinputmhs', 'ControllerAdmin@prosesinputmhs');
 
 Route::get('/tatausaha', 'ControllerAdmin@indexTU');
 Route::post('/tatausaha/proses', 'ControllerAdmin@prosesinputTU');
+
+Route::get('/perpustakaan', 'ControllerAdmin@indexperpustakaan');
 
 Route::get('/officeboy', 'ControllerAdmin@indexOB');
 Route::post('/officeboy', 'ControllerAdmin@prosesinputOB');

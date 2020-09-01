@@ -11,4 +11,23 @@
         ALamat        : <input type="text" name="alamat"><br>
         <input type="submit" value="Simpan">
     </form>
+
+    <table border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Dekan Jurusan</th>
+            <th>Umur</th>
+            <th>Alamat</th>
+        </tr>
+        @foreach($data_dekan as $data)
+        <tr>
+            <td>{{ $data->dekan_nama }}</td>
+            <td>{{ $data->dekan_jabatan }}</td>
+            <td>{{ $data->dekan_jurusan }}</td>
+            <td>{{ $data->dekan_umur }}</td>
+            <td>{{ $data->dekan_alamat }}</td>
+        </tr>
+        @endforeach
+    </table>
 @endsection

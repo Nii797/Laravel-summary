@@ -13,6 +13,7 @@
             <a href="{{ url('/dosen') }}">|Dosen|</a>
             <a href="{{ url('/mahasiswa') }}">|Mahasiswa|</a>
             <a href="{{ url('/tatausaha') }}">|Tata Usaha|</a>
+            <a href="{{ url('/perpustakaan') }}">|Perpustakaan|</a>
             <a href="{{ url('/officeboy') }}">|Office Boy|</a> <br><br>
         </nav>
     </header>

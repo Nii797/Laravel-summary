@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// database menggunakan query builder
+use Illuminate\Support\Facades\DB;
 
 class ControllerAdmin extends Controller
 {
@@ -34,19 +36,12 @@ class ControllerAdmin extends Controller
         return view('TamplateAdminBeranda');
     }
 
-    public function indexdosen() {
-        return view('TamplateDosen',
-            [
-                'nama' => "Yiyi Supendi",
-                'matkul' => "Jaringan Komputer",
-                'alamat' => "Cileunyi",
-                'jurusan' => "Informatika"
-            ]
-        );
-    }    
-
     public function indexdekan(){
-        return view('TamplateDekan');
+        // mengambil data dari table pegawai
+        $dekan = DB::table('data_dekan')->get();
+
+        // mengirim data pegawai ke view TamplateDekan
+        return view('TamplateDekan',['data_dekan' => $dekan]);
     }
 
     // masiih jadi PR        
@@ -60,6 +55,12 @@ class ControllerAdmin extends Controller
         return view('TamplateDekan')->with("Nama : ".$nama.", Alamat : ".$alamat);
     }
 
+    public function indexdosen() {
+        $dosen = DB::table('data_dosen')->get();
+
+        return view('TamplateDosen',['data_dosen' => $dosen]);
+    }    
+
     public function prosesinputdosen(Request $request){
         $nama = $request->input('nama');
         $alamat = $request->input('alamat');
@@ -68,14 +69,9 @@ class ControllerAdmin extends Controller
     }
 
     public function indexmahasiswa() {
-        return view('TamplateMahasiswa',
-            [
-                'nama' => "Soni Hidayatulloh",
-                'kelas' => "A3",
-                'alamat' => "Bandung Timur Majalaya city",
-                'jurusan' => "Teknik Informatika"
-            ]
-        );
+        $mahasiswa = DB::table('data_mahasiswa')->get();
+
+        return view('TamplateMahasiswa',['data_mahasiswa' => $mahasiswa]);
     }
 
     public function prosesinputmhs(Request $request){
@@ -88,24 +84,17 @@ class ControllerAdmin extends Controller
     }
 
     public function indexTU(){
-        return view('TamplateTU',
-            [
-                'namatu' => "Herman",
-                'bagian' => "Tata usaha administrasi",
-                'jabatan' => "Ketua Tata usaha"
-            ]
-        );
+        $TU = DB::table('data_tu')->get();
+        return view('TamplateTU',['data_tu' => $TU]);
     }
 
+    public function indexperpustakaan(){
+        return view('TamplateAdmin');
+    }
 
     public function indexOB(){
-        return view('TamplateOB', 
-            [
-                'id' => "43243",
-                'nama' => "Solihin Wayudin",
-                'alamat' => "Bandung Raya"
-            ]
-        );
+        $OB = DB::table('data_OB')->get();
+        return view('TamplateOB',['data_OB' => $OB]);
     }
 
     public function prosesinputOB(Request $request){
