@@ -47,8 +47,7 @@ Route::get('/admintangkap/{nama}', 'ControllerAdmin@iniindex');
 Route::get('/admin', 'ControllerAdmin@indexberandaadmin');
 
 Route::get('/dekan', 'ControllerAdmin@indexdekan');
-Route::post('/dekan', 'ControllerAdmin@prosesinputdekan');
-Route::get('/dekan/tambah', 'ControllerAdmin@indexdekan');
+Route::post('/dekan/storedekan', 'ControllerAdmin@tambahdekan');
 
 Route::get('/dosen', 'ControllerAdmin@indexdosen');
 Route::post('/dosen/prosesinputdosen', 'ControllerAdmin@prosesinputdosen');

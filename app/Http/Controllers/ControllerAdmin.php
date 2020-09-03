@@ -36,23 +36,27 @@ class ControllerAdmin extends Controller
         return view('TamplateAdminBeranda');
     }
 
+    public function tambahdekan(Request $request){
+        // Insert data ke table pegawai
+        DB::table('data_dekan')->insert([
+            'dekan_id' => $request->dekanid,
+            'dekan_nama' => $request->namadekan,
+            'dekan_jabatan' => $request->jabatan,
+            'dekan_jurusan' => $request->dekanjurusan,
+            'dekan_umur' => $request->umur,
+            'dekan_alamat' => $request->alamat
+        ]); 
+
+        // alihkan halaman ke halaman dekan
+        return redirect('/dekan');
+    }    
+
     public function indexdekan(){
         // mengambil data dari table pegawai
         $dekan = DB::table('data_dekan')->get();
 
         // mengirim data pegawai ke view TamplateDekan
         return view('TamplateDekan',['data_dekan' => $dekan]);
-    }
-
-    // masiih jadi PR        
-    public function prosesinputdekan(Request $request){
-        $nama = $request->input('nama');
-        $jabatan = $request->input('jabatan');
-        $dekanjurusan = $request->input('dekanjurusan');
-        $umur = $request->input('umur');
-        $alamat = $request->input('alamat');
-
-        return view('TamplateDekan')->with("Nama : ".$nama.", Alamat : ".$alamat);
     }
 
     public function indexdosen() {

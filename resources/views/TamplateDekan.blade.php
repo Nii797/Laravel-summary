@@ -2,13 +2,14 @@
 
 @section('kontent')
     <h1>DATA DEKAN</h1>
-    <form action="{{ action('ControllerAdmin@indexdekan') }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        Nama          : <input type="text" name="namadekan"><br>
-        Jabatan       : <input type="text" name="jabatan"><br>
-        Dekan Jurusan : <input type="text" name="dekanjurusan"><br>
-        Umur          : <input type="text" name="umur"><br>
-        ALamat        : <input type="text" name="alamat"><br>
+    <form action="{{ url('dekan/storedekan') }}" method="post">
+        {{ csrf_field() }}
+        ID            : <input type="text" name="dekanid" required="required"><br>
+        Nama          : <input type="text" name="namadekan" required="required"><br>
+        Jabatan       : <input type="text" name="jabatan" required="required"><br>
+        Dekan Jurusan : <input type="text" name="dekanjurusan" required="required"><br>
+        Umur          : <input type="text" name="umur" required="required"><br>
+        ALamat        : <input type="text" name="alamat" required="required"><br>
         <input type="submit" value="Simpan">
     </form>
 
