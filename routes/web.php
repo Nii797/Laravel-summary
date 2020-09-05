@@ -47,13 +47,13 @@ Route::get('/admintangkap/{nama}', 'ControllerAdmin@iniindex');
 Route::get('/admin', 'ControllerAdmin@indexberandaadmin');
 
 Route::get('/dekan', 'ControllerAdmin@indexdekan');
-Route::post('/dekan/storedekan', 'ControllerAdmin@tambahdekan');
+Route::post('/dekan/tambahdekan', 'ControllerAdmin@tambahdekan');
 
 Route::get('/dosen', 'ControllerAdmin@indexdosen');
-Route::post('/dosen/prosesinputdosen', 'ControllerAdmin@prosesinputdosen');
+Route::post('/dosen/tambahdosen', 'ControllerAdmin@tambahdosen');
 
 Route::get('/mahasiswa', 'ControllerAdmin@indexmahasiswa');
-Route::post('/mahasiswa/prosesinputmhs', 'ControllerAdmin@prosesinputmhs');
+Route::post('/mahasiswa/tambahmahsiswa', 'ControllerAdmin@tambahmahasiswa');
 
 Route::get('/tatausaha', 'ControllerAdmin@indexTU');
 Route::post('/tatausaha/proses', 'ControllerAdmin@prosesinputTU');

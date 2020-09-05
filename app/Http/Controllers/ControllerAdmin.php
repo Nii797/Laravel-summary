@@ -59,34 +59,6 @@ class ControllerAdmin extends Controller
         return view('TamplateDekan',['data_dekan' => $dekan]);
     }
 
-    public function indexdosen() {
-        $dosen = DB::table('data_dosen')->get();
-
-        return view('TamplateDosen',['data_dosen' => $dosen]);
-    }    
-
-    public function prosesinputdosen(Request $request){
-        $nama = $request->input('nama');
-        $alamat = $request->input('alamat');
-        
-        return "Nama : ".$nama.", Alamat : ".$alamat; 
-    }
-
-    public function indexmahasiswa() {
-        $mahasiswa = DB::table('data_mahasiswa')->get();
-
-        return view('TamplateMahasiswa',['data_mahasiswa' => $mahasiswa]);
-    }
-
-    public function prosesinputmhs(Request $request){
-        $nama    = $request->input('nama');
-        $kelas   = $request->input('kelas');
-        $alamat  = $request->input('alamat');
-        $jurusan = $request->input('jurusan');
-
-        return "Nama : ".$nama.", Kelas : ".$kelas." Alamat : ".$alamat.", Jurusan : ".$jurusan;
-    }
-
     public function indexTU(){
         $TU = DB::table('data_tu')->get();
         return view('TamplateTU',['data_tu' => $TU]);
