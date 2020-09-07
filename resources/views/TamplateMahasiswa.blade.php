@@ -3,7 +3,7 @@
 @section('kontent')
     <h1>DATA MAHASISWA</h1>
 
-    <form action="{{ action('ControllerAdmin@prosesinputmhs') }}" method="post">
+    <form action="{{ url('/dosen/tambahmahasiswa') }}" method="post">
         {{ csrf_field() }}
         ID      : <input type="text" name="idmahasiswa" require="require">
         Nama    : <input type="text" name="namamahasiswa" require="require"> <br> 
@@ -21,6 +21,15 @@
             <td>Alamat</td>
             <td>Jurusan</td>
         </tr>
+        @foreach($data_mahasiswa as $data)
+        <tr>
+            <td>{{ $data->mahasiswa_id }}</td>
+            <td>{{ $data->mahasiswa_nama }}</td>
+            <td>{{ $data->mahasiswa_kelas }}</td>
+            <td>{{ $data->mahasiswa_alamat }}</td>
+            <td>{{ $data->mahasiswa_jurusan }}</td>
+        </tr>
+        @endforeach
     </table>
 
 @endsection

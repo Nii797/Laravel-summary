@@ -19,6 +19,14 @@
             <td>Alamat</td>
             <td>Jurusan</td>
         </tr>
+        @foreach($data_dosen as $data)
+        <tr>
+            <td>{{ $data->dosen_id }}</td>
+            <td>{{ $data->dosen_nama }}</td>
+            <td>{{ $data->dosen_alamat }}</td>
+            <td>{{ $data->dosen_jurusan }}</td>
+        </tr>
+        @endforeach
     </table>
 
 @endsection

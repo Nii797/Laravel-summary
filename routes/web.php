@@ -53,13 +53,12 @@ Route::get('/dosen', 'ControllerAdmin@indexdosen');
 Route::post('/dosen/tambahdosen', 'ControllerAdmin@tambahdosen');
 
 Route::get('/mahasiswa', 'ControllerAdmin@indexmahasiswa');
-Route::post('/mahasiswa/tambahmahsiswa', 'ControllerAdmin@tambahmahasiswa');
+Route::post('/mahasiswa/tambahmahasiswa', 'ControllerAdmin@tambahmahasiswa');
 
 Route::get('/tatausaha', 'ControllerAdmin@indexTU');
-Route::post('/tatausaha/proses', 'ControllerAdmin@prosesinputTU');
+Route::post('/tatausaha/tambah', 'ControllerAdmin@tambahTU');
 
-Route::get('/perpustakaan', 'ControllerAdmin@indexperpustakaan');
+Route::get('/perpustakaan', 'ControllerAdmin@indexperpus');
+Route::post('/perpustakaan/tambah', 'ControllerAdmin@tambahperpus');
 
-Route::get('/officeboy', 'ControllerAdmin@indexOB');
-Route::post('/officeboy', 'ControllerAdmin@prosesinputOB');
-
+Route::get('/Officeboy', 'ControllerAdmin@indexOB');
