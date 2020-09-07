@@ -48,6 +48,8 @@ Route::get('/admin', 'ControllerAdmin@indexberandaadmin');
 
 Route::get('/dekan', 'ControllerAdmin@indexdekan');
 Route::post('/dekan/tambahdekan', 'ControllerAdmin@tambahdekan');
+Route::get('/dekan/editdekan/{id}','ControllerAdmin@editdekan');
+Route::post('/dekan/update', 'ControllerAdmin@updatedekan');
 
 Route::get('/dosen', 'ControllerAdmin@indexdosen');
 Route::post('/dosen/tambahdosen', 'ControllerAdmin@tambahdosen');

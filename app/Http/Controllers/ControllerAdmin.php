@@ -59,6 +59,26 @@ class ControllerAdmin extends Controller
         return view('TamplateDekan',['data_dekan' => $dekan]);
     }
 
+    // method untuk edit data pegawai
+    public function editdekan($id){
+        // mengambil data pegawai berdasarkan id yang dipilih
+        $dekan = DB::table('data_dekan')->where('dekan_id',$id)->get();
+        // passing data pegawai yang didapat ke view 
+        return view('TamplateDekanEdit',['data_dekan' => $dekan]);
+    }
+
+    public function updatedekan(Request $request){
+        DB::table('data_dekan')->where('dekan_id',$request->id)->update([
+            'dekan_nama' => $request->namadekan,
+            'dekan_jabatan' => $request->jabatan,
+            'dekan_jurusan' => $request->dekanjurusan,
+            'dekan_umur' => $request->umur,
+            'dekan_alamat' => $request->alamat    
+        ]);
+
+        return redirect('/dekan');
+    }
+
     public function tambahdosen(Request $request){
         DB::table('data_dosen')->insert([
             'dosen_id'=> $request->iddosen,

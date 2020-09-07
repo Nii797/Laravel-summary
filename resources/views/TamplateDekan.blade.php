@@ -2,7 +2,7 @@
 
 @section('kontent')
     <h1>DATA DEKAN</h1>
-    <form action="{{ url('dekan/storedekan') }}" method="post">
+    <form action="{{ url('dekan/tambahdekan') }}" method="post">
         {{ csrf_field() }}
         ID            : <input type="text" name="dekanid" required="required"><br>
         Nama          : <input type="text" name="namadekan" required="required"><br>
@@ -20,6 +20,7 @@
             <th>Dekan Jurusan</th>
             <th>Umur</th>
             <th>Alamat</th>
+            <th colspan="2">Aksi</th>
         </tr>
         @foreach($data_dekan as $data)
         <tr>
@@ -28,7 +29,12 @@
             <td>{{ $data->dekan_jurusan }}</td>
             <td>{{ $data->dekan_umur }}</td>
             <td>{{ $data->dekan_alamat }}</td>
+            <td>
+                <a href="{{ url('/dekan/editdekan/{$data->dekan_id}') }}">Edit</a> |
+                <a href="#">Hapus</a>
+            </td>
         </tr>
         @endforeach
-    </table>
+    </table><br><br>
+
 @endsection
