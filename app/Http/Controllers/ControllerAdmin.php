@@ -126,8 +126,20 @@ class ControllerAdmin extends Controller
         return view('TamplatePerpustakaan',['data_perpustakaan' => $dataperpus]);
     }
 
+    public function tambahOB(Request $request){
+        DB::table('data_ob')->insert([
+            'OB_ID' => $request->id,
+            'OB_nama' => $request->nama,
+            'OB_alamat' => $request->alamat,
+            'OB_bagianptempat' => $request->bagiantempat
+        ]);
+
+        return redirect('/officeboy');
+    }
+
     public function indexOB(){
-        return view('TamplateOB');
+        $dataofficeboy = DB::table('data_ob')->get();
+        return view('TamplateOB',['data_ob' => $dataofficeboy]);
     }
 }
 

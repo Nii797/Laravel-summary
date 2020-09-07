@@ -62,3 +62,6 @@ Route::get('/perpustakaan', 'ControllerAdmin@indexperpus');
 Route::post('/perpustakaan/tambah', 'ControllerAdmin@tambahperpus');
 
 Route::get('/Officeboy', 'ControllerAdmin@indexOB');
+Route::post('/officeboy/tambah', 'ControllerAdmin@tambahOB');
+
+
