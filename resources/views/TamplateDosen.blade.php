@@ -7,17 +7,18 @@
         {{ csrf_field() }}
         ID Dosen : <input type="text" name="iddosen" require="require"><br>
         Nama     : <input type="text" name="namadosen" require="require"><br>
-        ALamat   : <input type="text" name="alamatdosen" require="require"><br>
+        Alamat   : <input type="text" name="alamatdosen" require="require"><br>
         Jurusan  : <input type="text" name="jurusandosen" require="require"><br>
         <input type="submit" value="Simpan">
     </form>
 
     <table border="1">
         <tr>
-            <td>ID</td>
-            <td>Nama</td>
-            <td>Alamat</td>
-            <td>Jurusan</td>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Jurusan</th>
+            <th>Aksi</th>
         </tr>
         @foreach($data_dosen as $data)
         <tr>
@@ -25,6 +26,10 @@
             <td>{{ $data->dosen_nama }}</td>
             <td>{{ $data->dosen_alamat }}</td>
             <td>{{ $data->dosen_jurusan }}</td>
+            <td>
+                <a href="{{ url('/dosen/edit/'.$data->dosen_id) }}">Edit</a> |
+                <a href="#">Hapus</a>
+            </td>
         </tr>
         @endforeach
     </table>

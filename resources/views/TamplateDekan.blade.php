@@ -15,6 +15,7 @@
 
     <table border="1">
         <tr>
+            <th>ID</th>
             <th>Nama</th>
             <th>Jabatan</th>
             <th>Dekan Jurusan</th>
@@ -24,13 +25,15 @@
         </tr>
         @foreach($data_dekan as $data)
         <tr>
+            <td>{{ $data->dekan_id }}</td>
             <td>{{ $data->dekan_nama }}</td>
             <td>{{ $data->dekan_jabatan }}</td>
             <td>{{ $data->dekan_jurusan }}</td>
             <td>{{ $data->dekan_umur }}</td>
             <td>{{ $data->dekan_alamat }}</td>
             <td>
-                <a href="{{ url('/dekan/editdekan/{$data->dekan_id}') }}">Edit</a> |
+                <!-- url link untuk edit -->
+                <a href="{{ url('/dekan/edit/'.$data->dekan_id) }}">Edit</a> |
                 <a href="#">Hapus</a>
             </td>
         </tr>

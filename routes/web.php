@@ -37,33 +37,39 @@ Route::get('Identitas', function () {
 // });
 
 // Catch data url (menangkap data url)
-Route::get('/tes/{tesnamaurl}', 'ControllerAdmin@tesnamaurl');
+Route::get('/tes/{tesnamaurl}','ControllerAdmin@tesnamaurl');
 
 // menangkap data dari url parameter nama dari fungsi iniindex 
-Route::get('/admintangkap/{nama}', 'ControllerAdmin@iniindex');
+Route::get('/admintangkap/{nama}','ControllerAdmin@iniindex');
 
 // Route::get('/admin', 'ControllerAdmin@indexadmin');
 
-Route::get('/admin', 'ControllerAdmin@indexberandaadmin');
+Route::get('/admin','ControllerAdmin@indexberandaadmin');
 
-Route::get('/dekan', 'ControllerAdmin@indexdekan');
-Route::post('/dekan/tambahdekan', 'ControllerAdmin@tambahdekan');
-Route::get('/dekan/editdekan/{id}','ControllerAdmin@editdekan');
-Route::post('/dekan/update', 'ControllerAdmin@updatedekan');
+Route::get('/dekan','ControllerAdmin@indexdekan');
+Route::post('/dekan/tambahdekan','ControllerAdmin@tambahdekan');
+Route::get('/dekan/edit/{id}','ControllerAdmin@editdekan');
+Route::post('/dekan/update','ControllerAdmin@updatedekan');
 
 Route::get('/dosen', 'ControllerAdmin@indexdosen');
-Route::post('/dosen/tambahdosen', 'ControllerAdmin@tambahdosen');
+Route::post('/dosen/tambahdosen','ControllerAdmin@tambahdosen');
+Route::get('/dosen/edit/{id}','ControllerAdmin@editdosen');
+Route::post('/dosen/update','ControllerAdmin@updatedosen');
 
-Route::get('/mahasiswa', 'ControllerAdmin@indexmahasiswa');
-Route::post('/mahasiswa/tambahmahasiswa', 'ControllerAdmin@tambahmahasiswa');
+Route::get('/mahasiswa','ControllerAdmin@indexmahasiswa');
+Route::post('/mahasiswa/tambahmahasiswa','ControllerAdmin@tambahmahasiswa');
+Route::get('/mahasiswa/edit/{id}','ControllerAdmin@editmahasiswa');
+Route::post('/mahasiswa/update','COntrollerAdmin@updatemahasiswa');
 
-Route::get('/tatausaha', 'ControllerAdmin@indexTU');
-Route::post('/tatausaha/tambah', 'ControllerAdmin@tambahTU');
+Route::get('/tatausaha','ControllerAdmin@indexTU');
+Route::post('/tatausaha/tambah','ControllerAdmin@tambahTU');
+Route::get('/tatausaha/edit/{id}','ControllerAdmin@edittu');
+Route::post('/tatausaha/update','ControllerAdmin@updatetu');
 
-Route::get('/perpustakaan', 'ControllerAdmin@indexperpus');
-Route::post('/perpustakaan/tambah', 'ControllerAdmin@tambahperpus');
+Route::get('/perpustakaan','ControllerAdmin@indexperpus');
+Route::post('/perpustakaan/tambah','ControllerAdmin@tambahperpus');
+Route::get('/perpustakaan/edit/{id}','ControllerAdmin@editperpus');
+Route::post('/perpustakaan/update','ControllerAdmin@updateperpus');
 
 Route::get('/Officeboy', 'ControllerAdmin@indexOB');
 Route::post('/officeboy/tambah', 'ControllerAdmin@tambahOB');
-
-

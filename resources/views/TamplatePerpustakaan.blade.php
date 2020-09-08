@@ -17,12 +17,13 @@
 
     <table border="1">
         <tr>
-            <td>Nomor Buku</td> 
-            <td>Judul Buku</td>
-            <td>NPM Peminjam</td>
-            <td>Nama Peminjam</td>      
-            <td>Tanggal Pinjam</td>
-            <td>Tanggal Kembali</td>
+            <th>Nomor Buku</th> 
+            <th>Judul Buku</th>
+            <th>NPM Peminjam</th>
+            <th>Nama Peminjam</th>      
+            <th>Tanggal Pinjam</th>
+            <th>Tanggal Kembali</th>
+            <th>Aksi</th>
         </tr>
         @foreach($data_perpustakaan as $data)
         <tr>
@@ -32,6 +33,10 @@
             <td>{{ $data->nama_peminjam }}</td>
             <td>{{ $data->tgl_pinjam }}</td>
             <td>{{ $data->tgl_kembali }}</td> 
+            <td>
+                <a href="{{ url('/perpustakaan/edit/'.$data->nomor_buku) }}">Edit</a> |
+                <a href="http://">Hapus</a>
+            </td>
         </tr>
         @endforeach
     </table>

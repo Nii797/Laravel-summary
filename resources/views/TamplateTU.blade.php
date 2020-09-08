@@ -13,10 +13,11 @@
 
     <table border="1">
         <tr>
-            <td>ID TU</td>
-            <td>Nama TU</td>
-            <td>Bagian TU</td>
-            <td>Jabatan TU</td>
+            <th>ID TU</th>
+            <th>Nama TU</th>
+            <th>Bagian TU</th>
+            <th>Jabatan TU</th>
+            <th>Aksi</th>
         </tr>
         @foreach($data_tu as $data)
         <tr>
@@ -24,6 +25,10 @@
             <td>{{ $data->TU_nama }}</td>
             <td>{{ $data->TU_bagian }}</td>
             <td>{{ $data->TU_jabatan }}</td>
+            <td>
+                <a href="{{ url('/tatausaha/edit/'.$data->TU_id) }}">Edit</a> |
+                <a href="http://">Hapus</a>
+            </td>
         </tr>
         @endforeach
     </table>
