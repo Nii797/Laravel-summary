@@ -214,7 +214,22 @@ class ControllerAdmin extends Controller
             'OB_ID' => $request->id,
             'OB_nama' => $request->nama,
             'OB_alamat' => $request->alamat,
-            'OB_bagianptempat' => $request->bagiantempat
+            'OB_bagiantempat' => $request->bagiantempat
+        ]);
+
+        return redirect('/officeboy');
+    }
+
+    public function editOB($id){
+        $dataob = DB::table('data_ob')->where('OB_ID',$id)->get();
+        return view('TamplateOBEdit',['data_ob'=>$dataob]);
+    }
+
+    public function updateOB(Request $request){
+        DB::table('data_ob')->where('OB_ID', $request->idob)->update([
+            'OB_nama' => $request->namaob,
+            'OB_alamat' => $request->alamatob,
+            'OB_bagiantempat' => $request->bagiantempatob
         ]);
 
         return redirect('/officeboy');

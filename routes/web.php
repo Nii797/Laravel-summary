@@ -71,5 +71,7 @@ Route::post('/perpustakaan/tambah','ControllerAdmin@tambahperpus');
 Route::get('/perpustakaan/edit/{id}','ControllerAdmin@editperpus');
 Route::post('/perpustakaan/update','ControllerAdmin@updateperpus');
 
-Route::get('/Officeboy', 'ControllerAdmin@indexOB');
-Route::post('/officeboy/tambah', 'ControllerAdmin@tambahOB');
+Route::get('/officeboy','ControllerAdmin@indexOB');
+Route::post('/officeboy/tambah','ControllerAdmin@tambahOB');
+Route::get('/officeboy/edit{id}','ControllerAdmin@editOB');
+Route::post('/officeboy/update','ControllerAdmin@updateOB');
