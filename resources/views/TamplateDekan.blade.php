@@ -34,7 +34,7 @@
             <td>
                 <!-- url link untuk edit -->
                 <a href="{{ url('/dekan/edit/'.$data->dekan_id) }}">Edit</a> |
-                <a href="#">Hapus</a>
+                <a href="{{ url('/dekan/hapus/'.$data->dekan_id) }}">Hapus</a>
             </td>
         </tr>
         @endforeach

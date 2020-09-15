@@ -18,23 +18,18 @@ class ControllerAdmin extends Controller
         return $nama;
     }
 
-    // public function index(){
-    //     return view('TamplateAdmin',
-    // // data passing
-    //         [ 
-    //             'Dashboard' => 'Ini Dashboard',
-    //             'DataMahasiswa' => 'ini data mahasiswa',
-    //             'DataDosen' => 'Ini data dosen',
-    //             'DataTU' => 'Ini data TU',
-    //             'DataOB' => 'Ini data OB'
-    //         ]
-    //     );
-    // }
+// ============ Fungsi Admin ============
 
     public function indexberandaadmin()
     {
         return view('TamplateAdminBeranda');
     }
+
+// ============ Ekhir Fungsi Admin ============
+
+
+
+// ============ Fungsi Dekan ============
 
     public function tambahdekan(Request $request){
         // Insert data ke table pegawai
@@ -71,6 +66,11 @@ class ControllerAdmin extends Controller
         return redirect('/dekan');
     }
 
+    public function hapusdekan($id){
+        DB::table('data_dekan')->where('dekan_id',$id)->delete();
+        return redirect('/dekan');
+    }
+
     public function indexdekan(){
         // mengambil data dari table pegawai
         $dekan = DB::table('data_dekan')->get();
@@ -78,6 +78,12 @@ class ControllerAdmin extends Controller
         // mengirim data pegawai ke view TamplateDekan
         return view('TamplateDekan',['data_dekan' => $dekan]);
     }
+
+// ============ Akhir fungsi Dekan ============    
+
+
+
+// ============ Fungsi Dosen ============
 
     public function tambahdosen(Request $request){
         DB::table('data_dosen')->insert([
@@ -88,11 +94,6 @@ class ControllerAdmin extends Controller
         ]);
 
         return redirect('/dosen');
-    }
-
-    public function indexdosen(){
-        $dosen = DB::table('data_dosen')->get();
-        return view('TamplateDosen',['data_dosen' => $dosen]);
     }
 
     public function tambahmahasiswa(Request $request){
@@ -122,6 +123,22 @@ class ControllerAdmin extends Controller
         return redirect('/dosen');
     }
 
+    public function hapusdosen($id){
+        DB::table('data_dosen')->where('dosen_id')->delete();
+        return redirect('/mahasiswa');
+    }
+
+    public function indexdosen(){
+        $dosen = DB::table('data_dosen')->get();
+        return view('TamplateDosen',['data_dosen' => $dosen]);
+    }
+
+// ============ Akhir Fungsi Dosen ============
+
+
+
+// ============ Fungsi Mahasiswa ============
+
     public function editmahasiswa($id){
         $dataeditmahasiswa = DB::table('data_mahasiswa')->where('mahasiswa_id',$id)->get();
         return view('TamplateMahasiswaEdit',['data_mahasiswa' => $dataeditmahasiswa]);
@@ -142,6 +159,12 @@ class ControllerAdmin extends Controller
         $mahasiswa = DB::table('data_mahasiswa')->get();
         return view('TamplateMahasiswa',['data_mahasiswa' => $mahasiswa]);
     }
+
+// ============ Akhir Fungsi Mahasiswa ============    
+
+
+
+// ============ Fungsi TU ============
 
     public function tambahTU(Request $request){
         DB::table('data_tu')->insert([
@@ -173,6 +196,12 @@ class ControllerAdmin extends Controller
         $datatu = DB::table('data_tu')->get();
         return view('TamplateTU',['data_tu' => $datatu]);
     }
+
+// ============ Akhir Fungsi TU ============    
+
+
+
+// ============ Fungsi Perpustakaan ============
 
     public function tambahperpus(Request $request){
         DB::table('data_perpustakaan')->insert([
@@ -209,6 +238,12 @@ class ControllerAdmin extends Controller
         return view('TamplatePerpustakaan',['data_perpustakaan' => $dataperpus]);
     }
 
+// ============ Akhir Fungsi Perpustakaan ============
+
+
+
+// ============ Fungsi OB ============
+
     public function tambahOB(Request $request){
         DB::table('data_ob')->insert([
             'OB_ID' => $request->id,
@@ -241,6 +276,7 @@ class ControllerAdmin extends Controller
     }
 }
 
+// ============ Akhir Fungsi OB ============
 
 
 
