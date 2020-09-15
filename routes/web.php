@@ -56,7 +56,7 @@ Route::get('/dosen', 'ControllerAdmin@indexdosen');
 Route::post('/dosen/tambahdosen','ControllerAdmin@tambahdosen');
 Route::get('/dosen/edit/{id}','ControllerAdmin@editdosen');
 Route::post('/dosen/update','ControllerAdmin@updatedosen');
-Route::get('/dosen/hapus/{id}','ControllerAdmin@hapusdekan');
+Route::get('/dosen/hapus/{id}','ControllerAdmin@hapusdosen');
 
 Route::get('/mahasiswa','ControllerAdmin@indexmahasiswa');
 Route::post('/mahasiswa/tambahmahasiswa','ControllerAdmin@tambahmahasiswa');

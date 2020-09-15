@@ -1,4 +1,6 @@
 <?php
+// =================== CRUD COMPELTE ===================
+
 
 namespace App\Http\Controllers;
 
@@ -25,7 +27,7 @@ class ControllerAdmin extends Controller
         return view('TamplateAdminBeranda');
     }
 
-// ============ Ekhir Fungsi Admin ============
+// ============ Akhir Fungsi Admin ============
 
 
 
@@ -96,18 +98,6 @@ class ControllerAdmin extends Controller
         return redirect('/dosen');
     }
 
-    public function tambahmahasiswa(Request $request){
-        DB::table('data_mahasiswa')->insert([
-            'mahasiswa_id' => $request->idmahasiswa,
-            'mahasiswa_nama' => $request->namamahasiswa,
-            'mahasiswa_kelas' => $request->kelasmahasiswa,
-            'mahasiswa_alamat' => $request->alamatmahasiswa,
-            'mahasiswa_jurusan' => $request->jurusanmahasiswa
-        ]);
-
-        return redirect('/mahasiswa');
-    }
-
     public function editdosen($id){
         $dataeditdekan = DB::table('data_dosen')->where('dosen_id',$id)->get();
         return view('TamplateDosenEdit',['data_dosen' => $dataeditdekan]);
@@ -138,6 +128,19 @@ class ControllerAdmin extends Controller
 
 
 // ============ Fungsi Mahasiswa ============
+    
+    public function tambahmahasiswa(Request $request){
+        DB::table('data_mahasiswa')->insert([
+            'mahasiswa_id' => $request->idmahasiswa,
+            'mahasiswa_nama' => $request->namamahasiswa,
+            'mahasiswa_kelas' => $request->kelasmahasiswa,
+            'mahasiswa_alamat' => $request->alamatmahasiswa,
+            'mahasiswa_jurusan' => $request->jurusanmahasiswa
+        ]);
+
+        return redirect('/mahasiswa');
+    }
+
 
     public function editmahasiswa($id){
         $dataeditmahasiswa = DB::table('data_mahasiswa')->where('mahasiswa_id',$id)->get();
@@ -280,3 +283,4 @@ class ControllerAdmin extends Controller
 
 
 
+// ********************* SEE YOU NEXT TIME FOR UPDATE *********************
