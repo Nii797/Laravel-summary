@@ -39,6 +39,7 @@
             </td>
         </tr>
         @endforeach
-    </table>
+    </table> <br>
+    {{ $data_perpustakaan->links() }}
 
 @endsection

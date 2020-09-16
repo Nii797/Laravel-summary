@@ -32,6 +32,8 @@
             </td>
         </tr>
         @endforeach
-    </table>
+    </table><br>
+
+    {{ $data_dosen->links() }} <br>
 
 @endsection

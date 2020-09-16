@@ -40,4 +40,11 @@
         @endforeach
     </table><br><br>
 
+    Halaman         : {{ $data_dekan->currentPage() }} <br>
+    Jumlah Data     : {{ $data_dekan->total() }} <br>
+    Data Perhalaman : {{ $data_dekan->perPage() }} <br/>
+
+    {{ $data_dekan->links() }} <br>
+
+
 @endsection

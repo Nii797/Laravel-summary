@@ -3,7 +3,8 @@
 @section('kontent')
     <h1>DATA TU</h1>
 
-    <form action="#" method="post">
+    <form action="{{ url('/tatausaha/tambah') }}" method="post">
+        {{ csrf_field() }}
         ID TU      : <input type="text" name="idtu" require="require"><br>
         Nama TU    : <input type="text" name="namatu" require="require"><br>
         Bagian TU  : <input type="text" name="bagiantu" require="require"><br>
@@ -31,5 +32,9 @@
             </td>
         </tr>
         @endforeach
-    </table>
+    </table><br>
+    {{$data_tu->total()}}<br>
+
+    {{ $data_tu->links() }} <br>
+
 @endsection

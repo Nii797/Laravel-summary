@@ -1,7 +1,7 @@
 <?php
 
-// ================== cek file ==================
-// /database/seeds
+// ================== Pagination ==================
+
 
 namespace App\Http\Controllers;
 
@@ -76,7 +76,7 @@ class ControllerAdmin extends Controller
 
     public function indexdekan(){
         // mengambil data dari table pegawai
-        $dekan = DB::table('data_dekan')->get();
+        $dekan = DB::table('data_dekan')->paginate(10);
 
         // mengirim data pegawai ke view TamplateDekan
         return view('TamplateDekan',['data_dekan' => $dekan]);
@@ -132,7 +132,7 @@ class ControllerAdmin extends Controller
     }
 
     public function indexdosen(){
-        $dosen = DB::table('data_dosen')->get();
+        $dosen = DB::table('data_dosen')->paginate(10);
         return view('TamplateDosen',['data_dosen' => $dosen]);
     }
 
@@ -159,7 +159,7 @@ class ControllerAdmin extends Controller
     }
 
     public function indexmahasiswa(){
-        $mahasiswa = DB::table('data_mahasiswa')->get();
+        $mahasiswa = DB::table('data_mahasiswa')->paginate(3);
         return view('TamplateMahasiswa',['data_mahasiswa' => $mahasiswa]);
     }
 
@@ -196,7 +196,7 @@ class ControllerAdmin extends Controller
     }
 
     public function indexTU(){
-        $datatu = DB::table('data_tu')->get();
+        $datatu = DB::table('data_tu')->paginate(3);
         return view('TamplateTU',['data_tu' => $datatu]);
     }
 
@@ -237,7 +237,7 @@ class ControllerAdmin extends Controller
     }
 
     public function indexperpus(){
-        $dataperpus = DB::table('data_perpustakaan')->get();        
+        $dataperpus = DB::table('data_perpustakaan')->paginate(5);        
         return view('TamplatePerpustakaan',['data_perpustakaan' => $dataperpus]);
     }
 

@@ -35,6 +35,8 @@
             </td>
         </tr>
         @endforeach
-    </table>
+    </table><br>
+
+    {{ $data_mahasiswa->links() }} <br>
 
 @endsection
