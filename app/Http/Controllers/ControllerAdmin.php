@@ -1,5 +1,8 @@
 <?php
 
+// ================== cek file ==================
+// /database/seeds
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
