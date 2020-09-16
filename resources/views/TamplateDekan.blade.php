@@ -1,6 +1,13 @@
 @extends('TamplateAdmin')
 
 @section('kontent')
+
+    <p>Cari Data Dekan :</p>
+    <form action="{{ url('/dekan/cari') }}" method="get">
+        <input type="text" name="cari" placeholder="Cari Dekan .." value="{{ old('cari') }}">
+        <input type="submit" value="Cari">
+    </form>
+
     <h1>DATA DEKAN</h1>
     <form action="{{ url('dekan/tambahdekan') }}" method="post">
         {{ csrf_field() }}

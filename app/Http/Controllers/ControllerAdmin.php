@@ -82,6 +82,17 @@ class ControllerAdmin extends Controller
         return view('TamplateDekan',['data_dekan' => $dekan]);
     }
 
+    public function caridekan(Request $request){
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+        // mengambil data dari tabel pegawai sesuai pencarian data
+        $data_dekan = DB::table('data_dekan')->where('dekan_nama','like',"%".$cari."%")->paginate();
+
+        //mengirim data data_dekan ke view indesxnya
+        return view('TamplateDekan',['data_dekan' => $data_dekan]); 
+    }
+
 // ============ Akhir fungsi Dekan ============    
 
 
@@ -135,6 +146,8 @@ class ControllerAdmin extends Controller
         $dosen = DB::table('data_dosen')->paginate(10);
         return view('TamplateDosen',['data_dosen' => $dosen]);
     }
+
+
 
 // ============ Akhir Fungsi Dosen ============
 

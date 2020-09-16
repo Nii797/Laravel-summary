@@ -51,6 +51,7 @@ Route::post('/dekan/tambahdekan','ControllerAdmin@tambahdekan');
 Route::get('/dekan/edit/{id}','ControllerAdmin@editdekan');
 Route::post('/dekan/update','ControllerAdmin@updatedekan');
 Route::get('/dekan/hapus/{id}','ControllerAdmin@hapusdekan');
+Route::get('/dekan/cari','ControllerAdmin@caridekan');
 
 Route::get('/dosen', 'ControllerAdmin@indexdosen');
 Route::post('/dosen/tambahdosen','ControllerAdmin@tambahdosen');
