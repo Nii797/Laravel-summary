@@ -1,6 +1,6 @@
 <?php
 
-// ================== Pagination ==================
+// ================== Searching atau data pencarian ==================
 
 
 namespace App\Http\Controllers;
