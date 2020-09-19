@@ -1,6 +1,6 @@
 <?php
 
-// ================== Searching atau data pencarian ==================
+// ================== Use Bootstrap ==================
 
 
 namespace App\Http\Controllers;
